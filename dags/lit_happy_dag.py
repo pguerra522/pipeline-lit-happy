@@ -87,8 +87,4 @@ with DAG(
         columns=["country","literacy_rate", "literacy_year","score"],
         if_conflicts="update",
         source_table=joined_data,
-    )
-
-
-
-    aql.cleanup()
+    ) >> aql.cleanup()
